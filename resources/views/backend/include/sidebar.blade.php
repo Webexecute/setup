@@ -13,11 +13,11 @@
                      <img src="{{ asset('public/backend/assets/img/users/user-6.png') }}" class="profile-img-circle box-center" alt="User Image">
                  </div>
                  <div class="siderbar-profile-details">
-                     <div class="siderbar-profile-name"> Alexa Lopez </div>
+                     <div class="siderbar-profile-name"> Alexa Lopez</div>
                      <div class="siderbar-profile-position">Manager </div>
                  </div>
                  <div class="sidebar-profile-buttons">
-                     <a class="tooltips waves-effect waves-block toggled" href="profile.html" data-toggle="tooltip" title="" data-original-title="Profile">
+                     <a class="tooltips waves-effect waves-block toggled" href="{{ route('admin-profile')}}" data-toggle="tooltip" title="" data-original-title="Profile">
                          <i class="fas fa-user sidebarQuickIcon"></i>
                      </a>
                      <a class="tooltips waves-effect waves-block" href="email-inbox.html" data-toggle="tooltip" title="" data-original-title="Mail">

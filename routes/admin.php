@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 $adminPrefix = "";
 Route::group(['prefix' => $adminPrefix, 'middleware' => ['admin']], function() {
     Route::match(['get', 'post'], 'admin-dashboard', ['as' => 'admin-dashboard', 'uses' => 'backend\dashboard\DashboardController@dashboard']);
+    Route::match(['get', 'post'], 'admin-profile', ['as' => 'admin-profile', 'uses' => 'backend\profile\ProfileController@profile']);
+    Route::match(['get', 'post'], 'admin-changepassword', ['as' => 'admin-changepassword', 'uses' => 'backend\profile\ProfileController@password']);
+
 });
+// Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'backend\users\UserController@edit']);
+// Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'backend\users\UserController@update']);
+// Route::get('/changePassword','HomeController@showChangePasswordForm');

@@ -15,7 +15,7 @@
                 <h4>Login</h4>
               </div>
               <div class="card-body">
-                <form method="POST"  name="login-form" id="login-form" >@csrf
+                <form method="POST"  name="login-form" id="login-forms" >@csrf
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="email" tabindex="1"  autofocus>

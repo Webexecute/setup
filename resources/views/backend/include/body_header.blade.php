@@ -18,10 +18,10 @@
           <span class="d-sm-none d-lg-inline-block"></span></a>
         <div class="dropdown-menu dropdown-menu-right">
           <div class="dropdown-title">Hello Alexa Lopez</div>
-          <a href="profile.html" class="dropdown-item has-icon">
+          <a href="{{ route('admin-profile')}}" class="dropdown-item has-icon">
             <i class="far fa-user"></i> Profile
           </a>
-          <a href="timeline.html" class="dropdown-item has-icon">
+          <a href="{{ route('admin-changepassword')}}" class="dropdown-item has-icon">
             <i class="fas fa-bolt"></i> Change Password
           </a>
           <div class="dropdown-divider"></div>
@@ -30,5 +30,5 @@
           </a>
         </div>
       </li>
-    </ul>
+    </ul> 
   </nav>
