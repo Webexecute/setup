@@ -1,3 +1,18 @@
+@php
+
+$currentRoute = Route::current()->getName();
+
+if (!empty(Auth()->guard('admin')->user())) {
+$data = Auth()->guard('admin')->user();
+
+  if($data['usertype'] == "A"){
+      $userType = "Admin";
+  }
+  if($data['usertype'] == "U"){
+      $userType = "User";
+  }
+}
+@endphp
 <nav class="navbar navbar-expand-lg main-navbar">
     <div class="form-inline mr-auto">
       <ul class="navbar-nav mr-3">
@@ -14,18 +29,15 @@
       
       <li class="dropdown"><a href="#" data-toggle="dropdown"
           class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-          <img alt="image" src="{{ asset('public/backend/assets/img/user.png') }}" class="user-img-radious-style">
+          <img alt="image" src="{{ asset('public/uploads/my_image/'.$data['image']) }}" class="user-img-radious-style">
           <span class="d-sm-none d-lg-inline-block"></span></a>
         <div class="dropdown-menu dropdown-menu-right">
-          <div class="dropdown-title">Hello Alexa Lopez</div>
-          <a href="{{ route('admin-profile')}}" class="dropdown-item has-icon">
+          <div class="dropdown-title"> {{  strtoupper($data['username']) }}</div>
+          <a href="{{ route('my-profile') }}" class="dropdown-item has-icon">
             <i class="far fa-user"></i> Profile
           </a>
-          <a href="{{ route('admin-changepassword')}}" class="dropdown-item has-icon">
-            <i class="fas fa-bolt"></i> Change Password
-          </a>
           <div class="dropdown-divider"></div>
-        <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
+          <a href="{{ route('logout') }}" class="dropdown-item has-icon ">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </div>

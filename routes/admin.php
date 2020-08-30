@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 $adminPrefix = "";
 Route::group(['prefix' => $adminPrefix, 'middleware' => ['admin']], function() {
     Route::match(['get', 'post'], 'admin-dashboard', ['as' => 'admin-dashboard', 'uses' => 'backend\dashboard\DashboardController@dashboard']);
-    Route::match(['get', 'post'], 'admin-profile', ['as' => 'admin-profile', 'uses' => 'backend\profile\ProfileController@profile']);
-    Route::match(['get', 'post'], 'admin-changepassword', ['as' => 'admin-changepassword', 'uses' => 'backend\profile\ProfileController@password']);
+    
+    
+    Route::match(['get', 'post'], 'my-profile', ['as' => 'my-profile', 'uses' => 'backend\dashboard\MyproifiledController@myprofile']);
 
 });
 // Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'backend\users\UserController@edit']);
