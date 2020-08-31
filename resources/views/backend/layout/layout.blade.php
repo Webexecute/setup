@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('backend.include.header')
-<body>
+<body class="light fancy-sidebar theme-fancy">
   <div class="loader"></div>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
