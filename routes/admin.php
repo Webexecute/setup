@@ -19,6 +19,7 @@ Route::group(['prefix' => $adminPrefix, 'middleware' => ['admin']], function() {
     
     
     Route::match(['get', 'post'], 'my-profile', ['as' => 'my-profile', 'uses' => 'backend\dashboard\MyproifiledController@myprofile']);
+    Route::match(['get', 'post'], 'change-password', ['as' => 'change-password', 'uses' => 'backend\dashboard\MyproifiledController@changepassword']);
 
 });
 // Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'backend\users\UserController@edit']);

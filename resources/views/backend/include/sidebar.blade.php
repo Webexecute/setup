@@ -16,8 +16,8 @@ $data = Auth()->guard('admin')->user();
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="index.html">
-          <img alt="image" src="{{ asset('public/uploads/my_image/'.$data['image']) }}" class="header-logo" />
+      <a href="{{ route('admin-dashboard') }}">
+          <img alt="image" src="{{ asset('public/backend/assets/img/logo.png') }}" class="header-logo" />
           <span class="logo-name">Village</span>
         </a>
       </div>
@@ -25,7 +25,7 @@ $data = Auth()->guard('admin')->user();
           <li class="dropdown active" style="display: block;">
                <div class="sidebar-profile">
                  <div class="siderbar-profile-pic">
-                     <img src="{{ asset('public/backend/assets/img/users/user-6.png') }}" class="profile-img-circle box-center" alt="User Image">
+                     <img src="{{ asset('public/uploads/my_image/'.$data['image']) }}" class="profile-img-circle box-center" alt="User Image">
                  </div>
                  <div class="siderbar-profile-details">
                      <div class="siderbar-profile-name"> {{  strtoupper($data['username']) }}</div>
@@ -44,7 +44,7 @@ $data = Auth()->guard('admin')->user();
          </li>
 
         <li class="menu-header">Menu</li>
-        <li class="{{ $currentRoute == 'admin-dashboard' ? "active" : ''}}">
+        <li class="{{ $currentRoute == 'admin-dashboard' || $currentRoute == 'my-profile' ? "active" : ''}}">
                 <a class="nav-link" href="{{ route('admin-dashboard') }}">
                   <i class="fas fa-desktop"></i>
                   <span>Dashboard</span></a>
