@@ -51,7 +51,7 @@ $data = Auth()->guard('admin')->user();
           <div class="tab-content tab-bordered" id="myTab3Content">
            
             <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-              <form method="post" class="needs-validation" id="edit-profile">@csrf
+              <form method="post" class="" id="edit-profile" enctype="multipart/form-data">@csrf
                 <div class="card-body">
 
                   <div class="row">

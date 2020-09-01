@@ -12,18 +12,23 @@ class MyproifiledController extends Controller
     }
 
     public function myprofile(Request $request){
+        if ( $request->isMethod( 'post' ) ) {
+            print_r($request->file());
+            die();
+        }
         $data['title'] = Config::get( 'constants.PROJECT_NAME' ) . " || Admin-Dashboard";
         $data['description'] = Config::get( 'constants.PROJECT_NAME' ) ;
         $data['keywords'] = Config::get( 'constants.PROJECT_NAME' ) ;
         $data['css'] = array(
-
+               
         );
         $data['plugincss'] = array(
-                
+            'bundles/izitoast/css/iziToast.min.css'
         );
         $data['pluginjs'] = array(
             'plugins/validate/jquery.validate.min.js',
-            'plugins/toastr/toastr.min.js',
+            'bundles/izitoast/js/iziToast.min.js',
+            'js/page/toastr.js'
         );
         $data['js'] = array(
             'comman_function.js',

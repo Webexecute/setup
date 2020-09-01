@@ -65,7 +65,7 @@ function ajaxcall(url, data, callback) {
 }
 
 function handleAjaxFormSubmit(form, type) {
-
+  
     if (typeof type === 'undefined') {
         ajaxcall($(form).attr('action'), $(form).serialize(), function (output) {
             handleAjaxResponse(output);
@@ -84,28 +84,54 @@ function handleAjaxFormSubmit(form, type) {
     return false;
 }
 
-function showToster(status, message) {
+// function showToster(status, message) {
 
-    toastr.options = {
-        closeButton: true,
-        progressBar: true,
-        showMethod: 'slideDown',
-        timeOut: 4000
-    };
+//     toastr.options = {
+//         closeButton: true,
+//         progressBar: true,
+//         showMethod: 'slideDown',
+//         timeOut: 4000
+//     };
+//     if (status == 'success') {
+//         toastr.success(message, 'Success');
+//     }
+//     if (status == 'error') {
+//         toastr.error(message, 'Fail');
+
+//     }
+
+
+
+// }
+function showToster(status, message) {
+    // iziToast.options = {
+    //     closeButton: true,
+    //     progressBar: true,
+    //     showMethod: 'slideDown',
+    //     timeOut: 4000
+    // };
     if (status == 'success') {
-        toastr.success(message, 'Success');
+        iziToast.success({
+            message: message,
+            position: 'topRight'
+        });
     }
     if (status == 'error') {
-        toastr.error(message, 'Fail');
-
+        iziToast.error({
+            message: message,
+            position: 'topRight'
+        });
     }
-
-
-
+    if (status == 'warning') {
+        iziToast.warning({
+            message: message,
+            position: 'topRight'
+        });
+    }
 }
 
 function handleAjaxResponse(output) {
-
+    
     output = JSON.parse(output);
 
     if (output.message != '') {

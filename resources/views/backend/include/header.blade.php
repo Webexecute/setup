@@ -16,11 +16,19 @@
     
     <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
     @if (!empty($css))
-    @foreach ($css as $value)
-    @if(!empty($value))
-    <link rel="stylesheet" href="{{ asset('public/backend/assets/css/customcss/'.$value) }}">
+        @foreach ($css as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('public/backend/assets/css/customcss/'.$value) }}">
+            @endif
+        @endforeach
     @endif
-    @endforeach
+
+    @if (!empty($plugincss))
+        @foreach ($plugincss as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('public/backend/assets/'.$value) }}">
+            @endif
+        @endforeach
     @endif
     <script>
         var baseurl = "{{ asset('/') }}";

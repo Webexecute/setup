@@ -46,14 +46,15 @@ class LoginController extends Controller
         $data['description'] = Config::get( 'constants.PROJECT_NAME' ) ;
         $data['keywords'] = Config::get( 'constants.PROJECT_NAME' ) ;
         $data['css'] = array(
-            'toastr/toastr.min.css'
+            
         );
         $data['plugincss'] = array(
-            
+            'bundles/izitoast/css/iziToast.min.css'
         );
         $data['pluginjs'] = array(
             'plugins/validate/jquery.validate.min.js',
-            'plugins/toastr/toastr.min.js',
+            'bundles/izitoast/js/iziToast.min.js',
+            'js/page/toastr.js'
         );
         $data['js'] = array(
             'comman_function.js',

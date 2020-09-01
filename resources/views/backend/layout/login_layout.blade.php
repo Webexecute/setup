@@ -2,7 +2,6 @@
 <html lang="en">
 
 
-<!-- Mirrored from radixtouch.in/templates/snkthemes/grexsan/source/light/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Jul 2020 18:32:43 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -29,6 +28,16 @@
     @endif
     @endforeach
     @endif
+    
+
+    @if (!empty($plugincss))
+        @foreach ($plugincss as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('public/backend/assets/'.$value) }}">
+            @endif
+        @endforeach
+    @endif
+
     <script>
         var baseurl = "{{ asset('/') }}";
     </script>
@@ -42,10 +51,12 @@
     <!-- Page Specific JS File -->
     <!-- Template JS File -->
     <script src="{{ asset('public/backend/assets/js/scripts.js') }}"></script>
+   
+
     @if (!empty($pluginjs))
-    @foreach ($pluginjs as $value)
-    <script src="{{ asset('public/backend/assets/js/customjs/'.$value) }}" type="text/javascript"></script>
-    @endforeach
+        @foreach ($pluginjs as $value)
+            <script src="{{ asset('public/backend/assets/'.$value) }}" type="text/javascript"></script>
+        @endforeach
     @endif
 
     @if (!empty($js))
